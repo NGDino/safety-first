@@ -10,15 +10,23 @@ router.get('/', (req, res) => {
             'title',
             'post_text',
             'safety_measures',
+            'mask_required',
+            'staff_mask',
+            'staff_gloves',
+            'contactless_payment',
+            'handsanitizer_provided',
+            'social_distancing',
             'created_at'
-
-            
         ],
         order: [['created_at', 'DESC']],
         include: [
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Business,
+                attributes: ['name']
             }
         ]
     })
@@ -38,9 +46,15 @@ router.get('/:id', (req, res) => {
         },
         attributes: [
             'id',
-            
             'title',
             'post_text',
+            'safety_measures',
+            'mask_required',
+            'staff_mask',
+            'staff_gloves',
+            'contactless_payment',
+            'handsanitizer_provided',
+            'social_distancing',
             'created_at'
         ],
         include: [
@@ -71,12 +85,20 @@ router.get('/:id', (req, res) => {
 // Create a Post
 router.post('/', (req, res) => {
     // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+    console.log("BODY:", req.body)
     Post.create({
         title: req.body.title,
         post_text: req.body.post_text,
         user_id: req.session.user_id,
-        business_id: req.body.business_id,
-        safety_measures: req.body.safety_measures
+        // business_id: req.body.business_id,
+        business_id: parseInt(req.body.business_id),
+        safety_measures: req.body.safety_measures,
+        mask_required: req.body.mask_required,
+        staff_mask: req.body.staff_mask,
+        staff_gloves: req.body.staff_gloves,
+        contactless_payment: req.body.contactless_payment,
+        handsanitizer_provided: req.body.handsanitizer_provided,
+        social_distancing: req.body.social_distancing,
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {

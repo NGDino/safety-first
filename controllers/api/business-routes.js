@@ -10,7 +10,6 @@ router.get('/', (req, res) => {
             'name',
             'business_url',
             'created_at'
-            
         ],
         order: [['created_at', 'DESC']],
         include: [
@@ -44,12 +43,18 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: Post,
-                attributes: 
-                [
-                    'title',
-                    'post_text',
-                    'safety_measures'
-                ]
+                attributes:
+                    [
+                        'title',
+                        'post_text',
+                        'safety_measures',
+                        'mask_required',
+                        'staff_mask',
+                        'staff_gloves',
+                        'contactless_payment',
+                        'handsanitizer_provided',
+                        'social_distancing'
+                    ]
             }
         ]
     })

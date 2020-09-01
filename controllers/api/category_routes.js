@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Category} = require("../../models");
+const { Category } = require("../../models");
 
 // GET /api/users
 router.get('/', (req, res) => {
@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: [ 'id', 'name']
+        attributes: ['id', 'name']
     })
         .then(dbCategoryData => {
             if (!dbCategoryData) {
@@ -42,9 +42,7 @@ router.post('/', (req, res) => {
         .catch(err => {
             console.log(err);
             res.status(500).json(err)
-    });
-           
-        
+        });
 });
 
 
