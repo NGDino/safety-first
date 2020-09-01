@@ -20,12 +20,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jennifermulder/information-station.git"
+    "url": "ghttps://github.com/NGDino/safety-first"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jennifermulder/information-station/issues"
+    "url": "https://github.com/NGDino/safety-first"
   },
-  "homepage": "https://github.com/jennifermulder/information-station#readme"
+  "homepage": "https://github.com/NGDino/safety-first"
 }
