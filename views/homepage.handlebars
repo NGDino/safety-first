@@ -1,0 +1,18 @@
+<ol class="business-list">
+  {{#each businesses }}
+  <li>
+    
+     
+    <article class="business">
+      <div class="name">
+        <h1><a href="/businesses/{{id}}">{{name}}</a></h1>
+        <h5>Category:  {{category.username}} </h5>
+        <a href="{{business_url}}">{{business_url}}</a>
+      
+      </div>
+    
+    </article>
+
+  </li>
+  {{/each}}
+</ol>

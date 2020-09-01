@@ -1,0 +1,48 @@
+{{!-- dashboard displays the create posts form and the previous created posts (if logged in) --}}
+<section>
+  <h2>Create New Post</h2>
+
+  <form class="new-post-form">
+    <div>
+        <label for="business-name">Business Name(id)</label>
+        <input type="number" id="business-name" placeholder="should be name is ID for NOW"/>
+        <label for="post-title">Title</label>
+        <input type="text" id="post-title" name="post-title" placeholder="Title" />
+       <p>
+       <label>
+        <input type="checkbox" class="filled-in" id="safety-measures" />
+        <span>Safety Measures</span>
+      </label>
+      </p>
+        
+        
+    </div>
+    <div>
+      <label for="post-text">Content</label>
+      <div>
+        <textarea name="post-body"></textarea>
+      </div>
+     
+      <button type="submit" class="btn">Create</button>
+  </form>
+</section>
+
+
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ul>
+    
+    <li>
+        {{#each posts as |post|}}
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      {{/each}}
+    </li>
+    
+  </ul>
+</section>
+{{/if}}
+
+{{!-- to make link work, need to reference functionality in js --}}
+<script src="/javascript/add-post.js"></script>
