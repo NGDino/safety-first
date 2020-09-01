@@ -2,9 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our Post model
-class Post extends Model {}
-
-
+class Post extends Model { }
 
 // create fields/columns for Post model
 Post.init(
@@ -19,13 +17,6 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    // post_url: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   validate: {
-    //     isURL: true
-    //   }
-    // },
     post_text: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -52,6 +43,24 @@ Post.init(
       //   model: 'safety',
       //   key: 'id'
       // }
+    },
+    mask_required: {
+      type: DataTypes.BOOLEAN,
+    },
+    staff_mask: {
+      type: DataTypes.BOOLEAN,
+    },
+    staff_gloves: {
+      type: DataTypes.BOOLEAN,
+    },
+    contactless_payment: {
+      type: DataTypes.BOOLEAN,
+    },
+    handsanitizer_provided: {
+      type: DataTypes.BOOLEAN,
+    },
+    social_distancing: {
+      type: DataTypes.BOOLEAN,
     }
   },
   {
