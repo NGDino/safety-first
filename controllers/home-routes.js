@@ -3,38 +3,35 @@ const sequelize = require('../config/connection');
 const { Business, User, Category } = require('../models');
 
 router.get('/', (req, res) => {
-    
+
     Business.findAll({
-                attributes: [
-                    'id',
-                    'name',
-                    'business_url',
-                    
-                ],
-                include: [
-                    {
-                        model: Category,
-                        attributes: ['name'],
-                        
-                        
-                    },
-                   
-                ]
-            })
-                .then(dbPostData => {
-                    // pass a single post object into the homepage template
-                    const businesses = dbPostData.map(business => business.get({ plain: true }));
-        
-                    res.render('homepage', {
-                        businesses,
-                        loggedIn: req.session.loggedIn
-                    });
-                })
-                .catch(err => {
-                    console.log(err);
-                    res.status(500).json(err);
-                });
-    });
+        attributes: [
+            'id',
+            'name',
+            'business_url',
+        ],
+        include: [
+            {
+                model: Category,
+                attributes: ['name'],
+            },
+
+        ]
+    })
+        .then(dbPostData => {
+            // pass a single post object into the homepage template
+            const businesses = dbPostData.map(business => business.get({ plain: true }));
+
+            res.render('homepage', {
+                businesses,
+                loggedIn: req.session.loggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 
 
