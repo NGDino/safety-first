@@ -1,11 +1,13 @@
-{{!-- dashboard displays the create posts form and the previous created posts (if logged in) --}}
+{{> business-info business }}
+
+<a href=""
+
+{{#if loggedIn}}
 <section>
   <h2>Create New Post</h2>
 
   <form class="new-post-form">
     <div>
-      <label for="business-name">Business Name(id)</label>
-      <input type="number" id="business-name" placeholder="should be name is ID for NOW" />
       <label for="post-title">Title</label>
       <input type="text" id="post-title" name="post-title" placeholder="Title" />
       <div class= "safety-measures">
@@ -50,14 +52,15 @@
       <button type="submit" class="btn">Create</button>
   </form>
 </section>
+{{/if}}
 
 
-{{#if posts.length}}
+
 <section>
-  <h2>Your Posts</h2>
+  <h2>{{business.name}} Reviews</h2>
   <ul>
-    {{#each posts as |post|}}
-    <li>
+    {{#each business.posts as |post|}}
+     <li>
       <div class="row">
         <div class="col s12 m5">
           <div class="card-panel blue lighten-5">
@@ -67,11 +70,12 @@
         </div>
       </div>
     </li>
-
     {{/each}}
   </ul>
 </section>
-{{/if}}
 
-{{!-- to make link work, need to reference functionality in js --}}
+
+{{#if loggedIn}}
 <script src="/javascript/add-post.js"></script>
+{{!-- <script src="/javascript/upvote.js"></script> --}}
+{{/if}}
