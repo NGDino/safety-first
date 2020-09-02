@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Business, User, Category } = require('../models');
+const { Business, User, Category, Post } = require('../models');
 
 router.get('/', (req, res) => {
 
@@ -53,52 +53,65 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-// router.get('/post/:id', (req, res) => {
-//     Post.findOne({
-//         where: {
-//             id: req.params.id
-//         },
-//         attributes: [
-//             'id',
-//             'post_url',
-//             'title',
-//             'created_at',
-//             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-//         ],
-//         include: [
-//             {
-//                 model: Comment,
-//                 attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-//                 include: {
-//                     model: User,
-//                     attributes: ['username']
-//                 }
-//             },
-//             {
-//                 model: User,
-//                 attributes: ['username']
-//             }
-//         ]
-//     })
-//         .then(dbPostData => {
-//             if (!dbPostData) {
-//                 res.status(404).json({ message: 'No post found with this id' });
-//                 return;
-//             }
+//open single business
+router.get('/business/:id', (req, res) => {
+    Business.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: [
+            'id',
+            'name',
+            'business_url'
+        ],
+        include: [
+            {
+                model: Category,
+                attributes: ['id', 'name'],
+            },
+            {
+                model: Post,
+                attributes: [
+                    'id',
+                    'title',
+                    'post_text',
+                    'safety_measures',
+                    'mask_required',
+                    'staff_mask',
+                    'staff_gloves',
+                    'contactless_payment',
+                    'handsanitizer_provided',
+                    'social_distancing',
+                    'created_at'
+                ],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            }
+        ]
+    })
+        .then(dbBusinessData => {
+            if (!dbBusinessData) {
+                res.status(404).json({ message: 'No post found with this id' });
+                return;
+            }
 
-//             // serialize the data
-//             const post = dbPostData.get({ plain: true });
+            // serialize the data
+            const business = dbBusinessData.get({ plain: true });
+            
 
-//             // pass data to template
-//             res.render('single-post', {
-//                 post,
-//                 loggedIn: req.session.loggedIn
-//             });
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
+            // pass data to template
+            res.render('single-business', {
+                business,
+               
+                loggedIn: req.session.loggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 module.exports = router;

@@ -1,13 +1,23 @@
-<ol class="business-list">
-  {{#each businesses }}
-  <li>
-    <article class="business">
-      <div class="name">
-        <h1><a href="/businesses/{{id}}">{{name}}</a></h1>
-        <h5>Category: {{category.username}} </h5>
-        <a href="{{business_url}}">{{business_url}}</a>
+<ul class="business-list">
+  <div class="row">
+    <div class="col s12 m5">
+      <div class="card-panel blue lighten-5">
+       {{#each businesses as |business| }}
+        <li>
+          {{> business-info business }}
+        </li>
+        {{/each}}
       </div>
-    </article>
-  </li>
-  {{/each}}
+    </div>
+  </div>
+</ol>
+
+
+
+
+<ul class="business-list">
+  
+      </div>
+    </div>
+  </div>
 </ol>
