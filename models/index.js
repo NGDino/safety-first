@@ -6,7 +6,6 @@ const Post = require("./Post");
 // const Vote = require('./Vote');
 // const Comment = require('./Comment');
 
-
 // create associations
 //user can have many models associated to it
 User.hasMany(Post, {

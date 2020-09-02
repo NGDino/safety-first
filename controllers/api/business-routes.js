@@ -28,7 +28,6 @@ router.get('/', (req, res) => {
         });
 });
 
-
 // GET a Single Post
 router.get('/:id', (req, res) => {
     Business.findOne({

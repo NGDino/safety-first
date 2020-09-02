@@ -5,27 +5,33 @@
   </h2>
   <form class="edit-post-form">
     <div>
-      <input type="number" id="business-name" value="{{post.business_id}}" />
+      {{!-- <form class="search-form">
+        <input type="text" class="search" placeholder="Business Name">
+        <ul class="suggestions">
+          <li>Filter for a business</li>
+        </ul>
+      </form> --}}
+      <input type="text" id="business-name" value="{{business.name}}" />
       <input name="post-title" type="text" value="{{post.title}}" />
       <p>
         <label>
-          <input type="checkbox" class="filled-in" id="safety-measures" checked="{{post.safety_measures}}" />
+          <input type="checkbox" class="filled-in" id="safety-measures" value="{{post.safety_measures}}" />
           <span>Safety Measures</span>
         </label>
         <label>
-          <input type="checkbox" class="filled-in" id="mask-required" checked="{{post.mask_required}}" />
+          <input type="checkbox" class="filled-in" id="mask-required" value="{{post.mask_required}}" />
           <span>Masks required</span>
         </label>
         <label>
-          <input type="checkbox" class="filled-in" id="staff-mask" checked="{{post.staff_mask}}" />
+          <input type="checkbox" class="filled-in" id="staff-mask" value="{{post.staff_mask}}" />
           <span>Staff wears masks</span>
         </label>
         <label>
-          <input type="checkbox" class="filled-in" id="staff-gloves" checked="{{post.staff_gloves}}" />
+          <input type="checkbox" class="filled-in" id="staff-gloves" value="{{post.staff_gloves}}" />
           <span>Staff wears gloves</span>
         </label>
         <label>
-          <input type="checkbox" class="filled-in" id="contactless-payment" checked="{{post.contactless_payment}}" />
+          <input type="checkbox" class="filled-in" id="contactless-payment" value="{{post.contactless_payment}}" />
           <span>Contactless payment</span>
         </label>
         <label>
@@ -41,9 +47,6 @@
       <textarea name="post-text">{{post.post_text}}</textarea>
     </div>
 
-
-
-
     <button type="submit">Save post</button>
     <button type="button" class="delete-post-btn">Delete post</button>
   </form>
@@ -51,3 +54,4 @@
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
+<script src="/javascript/business-search.js"></script>
