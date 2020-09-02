@@ -58,9 +58,16 @@
   <ul>
     {{#each posts as |post|}}
     <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      <div class="row">
+        <div class="col s12 m5">
+          <div class="card-panel blue lighten-5">
+            {{> post-info post}}
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+          </div>
+        </div>
+      </div>
     </li>
+
     {{/each}}
   </ul>
 </section>
