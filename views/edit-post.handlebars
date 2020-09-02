@@ -5,29 +5,49 @@
   </h2>
   <form class="edit-post-form">
     <div>
+      <input type="number" id="business-name" value="{{post.business_id}}" />
       <input name="post-title" type="text" value="{{post.title}}" />
+      <p>
+        <label>
+          <input type="checkbox" class="filled-in" id="safety-measures" checked="{{post.safety_measures}}" />
+          <span>Safety Measures</span>
+        </label>
+        <label>
+          <input type="checkbox" class="filled-in" id="mask-required" checked="{{post.mask_required}}" />
+          <span>Masks required</span>
+        </label>
+        <label>
+          <input type="checkbox" class="filled-in" id="staff-mask" checked="{{post.staff_mask}}" />
+          <span>Staff wears masks</span>
+        </label>
+        <label>
+          <input type="checkbox" class="filled-in" id="staff-gloves" checked="{{post.staff_gloves}}" />
+          <span>Staff wears gloves</span>
+        </label>
+        <label>
+          <input type="checkbox" class="filled-in" id="contactless-payment" checked="{{post.contactless_payment}}" />
+          <span>Contactless payment</span>
+        </label>
+        <label>
+          <input type="checkbox" class="filled-in" id="handsanitizer-provided"
+            checked="{{post.handsanitizer_provided}}" />
+          <span>Handsanitizer provided</span>
+        </label>
+        <label>
+          <input type="checkbox" class="filled-in" id="social-distancing" checked="{{post.social_distancing}}" />
+          <span>Social distancing enforced</span>
+        </label>
+      </p>
       <textarea name="post-text">{{post.post_text}}</textarea>
     </div>
-    {{!-- <div>
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
-    </div> --}}
+
+
+
+
     <button type="submit">Save post</button>
     <button type="button" class="delete-post-btn">Delete post</button>
   </form>
 </article>
 
-{{!-- <form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
-
-{{> comments post.comments}} --}}
-
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
-<script src="/javascript/comment.js"></script>

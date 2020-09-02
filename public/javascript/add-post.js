@@ -5,7 +5,7 @@ async function newFormHandler(event) {
   // on form submission, grab input data from title and (link) URL fields
 
   const title = document.querySelector('input[name="post-title"]').value;
-  const post_text = document.querySelector('textarea[name="post-body"]').value;
+  const post_text = document.querySelector('textarea[name="post-text"]').value;
   const business_id = document.querySelector('#business-name').value;
   //test for safety measures
   const safety_measures = document.getElementById("safety-measures").checked = true;//trying to give boolean value to checkbox
