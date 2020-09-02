@@ -1,8 +1,8 @@
 <ol class="business-list">
-  {{#each businesses }}
+  {{#each businesses as |business| }}
   <li>
-    
-     
+    {{> business-info business }}
+{{!--      
     <article class="business">
       <div class="name">
         <h1><a href="/businesses/{{id}}">{{name}}</a></h1>
@@ -11,7 +11,7 @@
       
       </div>
     
-    </article>
+    </article> --}}
 
   </li>
   {{/each}}

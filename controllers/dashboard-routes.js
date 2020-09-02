@@ -4,7 +4,7 @@ const { Post, User, Business } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-    console.log("Dashboard-routes.js line 7", req.session);
+    // console.log("Dashboard-routes.js line 7", req.session);
 
     Post.findAll({
         where: {
