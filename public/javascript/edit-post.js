@@ -8,6 +8,7 @@ async function editFormHandler(event) {
   const title = document.querySelector('input[name="post-title"]').value;
   const post_text = document.querySelector('textarea[name="post-text"]').value;
   const business_id = document.querySelector('#business-name').value;
+  // const business_name = document.querySelector('#business-name').value;
   //test for safety measures
   const safety_measures = document.getElementById("safety-measures").value;//trying to give boolean value to checkbox
   const mask_required = document.getElementById("mask-required").value;//trying to give boolean value to checkbox
@@ -25,6 +26,7 @@ async function editFormHandler(event) {
       title,
       post_text,
       business_id,
+      // business_name,
       safety_measures,
       mask_required,
       staff_mask,
