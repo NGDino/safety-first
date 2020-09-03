@@ -11,13 +11,13 @@ async function editFormHandler(event) {
   // const business_name = document.querySelector('#business-name').value;
   //test for safety measures
   const safety_measures = document.getElementById("safety-measures").checked;//trying to give boolean value to checkbox
-  const mask_required = document.getElementById("mask-required").checked;
-  const staff_mask = document.getElementById("staff-mask").checked;
-  const staff_gloves = document.getElementById("staff-gloves").checked;
-  const contactless_payment = document.getElementById("contactless-payment").checked;
-  const handsanitizer_provided = document.getElementById("handsanitizer-provided").checked;
-  const social_distancing = document.getElementById("social-distancing").checked;
-
+  const mask_required = document.getElementById("mask-required").checked;//trying to give boolean value to checkbox
+  const staff_mask = document.getElementById("staff-mask").checked;//trying to give boolean value to checkbox
+  const staff_gloves = document.getElementById("staff-gloves").checked;//trying to give boolean value to checkbox
+  const contactless_payment = document.getElementById("contactless-payment").checked;//trying to give boolean value to checkbox
+  const handsanitizer_provided = document.getElementById("handsanitizer-provided").checked;//trying to give boolean value to checkbox
+  const social_distancing = document.getElementById("social-distancing").checked;//trying to give boolean value to checkbox
+  
 
   // send them with a POST request to /api/posts
   await fetch(`/api/posts/${id}`, {
