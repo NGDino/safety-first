@@ -2,7 +2,29 @@
 <section>
   <h2>Create New Post</h2>
 
-  <form class="new-post-form">
+  {{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ul>
+    {{#each posts as |post|}}
+    <li>
+      <div class="row">
+        <div class="col s12 m5">
+          <div class="card-panel blue lighten-5">
+            {{> post-info post}}
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+</section>
+{{/if}}
+
+<a href="#" id="create-new"> <h2>Create New Post</h2></a>
+
+  <form class="new-post-form hide">
     <div>
       {{!-- <form class="search-form">
         <input type="text" class="search" placeholder="Business Name">
@@ -44,38 +66,16 @@
           <span>Social distancing enforced</span>
         </label>
       </div>
-    </div>
-    <div>
       <label for="post-text">Content</label>
       <div>
         <textarea name="post-text"></textarea>
       </div>
       <button type="submit" class="btn">Create</button>
+    </div>
   </form>
 </section>
 
-
-{{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ul>
-    {{#each posts as |post|}}
-    <li>
-      <div class="row">
-        <div class="col s12 m5">
-          <div class="card-panel blue lighten-5">
-            {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-          </div>
-        </div>
-      </div>
-    </li>
-
-    {{/each}}
-  </ul>
-</section>
-{{/if}}
-
 {{!-- to make link work, need to reference functionality in js --}}
+<script src="/javascript/unhide-form.js"></script>
 <script src="/javascript/add-post.js"></script>
 <script src="/javascript/business-search.js"></script>
