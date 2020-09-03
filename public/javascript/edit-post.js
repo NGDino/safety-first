@@ -17,7 +17,7 @@ async function editFormHandler(event) {
   const contactless_payment = document.getElementById("contactless-payment").checked;//trying to give boolean value to checkbox
   const handsanitizer_provided = document.getElementById("handsanitizer-provided").checked;//trying to give boolean value to checkbox
   const social_distancing = document.getElementById("social-distancing").checked;//trying to give boolean value to checkbox
-
+  
 
   // send them with a POST request to /api/posts
   await fetch(`/api/posts/${id}`, {
