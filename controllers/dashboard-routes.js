@@ -83,15 +83,14 @@ router.get('/edit/:id', (req, res) => {
             ],
         })
             .then(dbPostData => {
-                console.table("response from the db: ");
-                console.table(dbPostData);
+                // console.table("response from the db: ");
+                // console.table(dbPostData);
                 if (!dbPostData) {
                     res.status(404).json({ message: 'No post found with this id' });
                     return;
                 }
                 // serialize the data
                 const post = dbPostData.get({ plain: true });
-                console.table(post)
                 // pass data to template
                 res.render('edit-post', {
                     post,

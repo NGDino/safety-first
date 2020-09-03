@@ -3,16 +3,17 @@
   <h2>
     Edit Post
   </h2>
+  <form class="search-form">
+    <input type="text" class="search" placeholder="Business Name">
+    <ul class="suggestions">
+      <li>Filter for a business</li>
+    </ul>
+  </form>
   <form class="edit-post-form">
     <div>
-      {{!-- <form class="search-form">
-        <input type="text" class="search" placeholder="Business Name">
-        <ul class="suggestions">
-          <li>Filter for a business</li>
-        </ul>
-      </form> --}}
-      <input type="text" id="business-name" value="{{business.name}}" />
+      <input name="business-name" type="text" id="business-name" value="{{post.business.name}}" />
       <input name="post-title" type="text" value="{{post.title}}" />
+      <textarea name="post-text">{{post.post_text}}</textarea>
       <label>
         <input type="checkbox" class="filled-in" id="safety-measures" {{#if post.safety_measures }}
           checked="{{post.safety_measures}}" {{/if}}>
@@ -55,9 +56,7 @@
         {{!-- <input type="checkbox" class="filled-in" id="social-distancing" checked="{{post.social_distancing}}" /> --}}
         <span>Social distancing enforced</span>
       </label>
-      <textarea name="post-text">{{post.post_text}}</textarea>
     </div>
-
     <button type="submit">Save post</button>
     <button type="button" class="delete-post-btn">Delete post</button>
   </form>
