@@ -110,6 +110,7 @@ router.post('/', (req, res) => {
 
 // Update a Post's Title
 router.put('/:id', (req, res) => {
+    console.log("BODY:", req.body)
     Post.update(
         {
             title: req.body.title
