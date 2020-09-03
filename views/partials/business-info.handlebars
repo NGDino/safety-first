@@ -1,14 +1,12 @@
-  
 {{!-- pulled out of homepage --}}
 <article class="business">
-      <div class="title">
-        
-        <h1><a href="/business/{{id}}" >{{name}}</a></h1>
-        <h5> Category: {{category.name}} </h5>
-        <a href="{{business_url}}" target = "_blank">{{business_url}}</a>
-        <p class="reviews"> Number of reviews (posts,lenghth not working){{posts.length}}</p>
-      
-      </div>
-    
-    </article>
- 
+  <div class="title">
+
+    <h1><a href="/business/{{id}}">{{name}}</a></h1>
+    <h5> Category: {{category.name}} </h5>
+    <a href="{{business_url}}" target="_blank">{{business_url}}</a>
+    <p class="reviews"> Number of reviews: {{posts.length}}</p>
+
+  </div>
+
+</article>

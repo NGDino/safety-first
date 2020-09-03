@@ -1,37 +1,41 @@
 {{!-- dashboard displays the create posts form and the previous created posts (if logged in) --}}
 <section>
-  <h2>Create New Post</h2>
+  {{!-- <h2>Create New Post</h2> --}}
 
   {{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ul>
-    {{#each posts as |post|}}
-    <li>
-      <div class="row">
-        <div class="col s12 m5">
-          <div class="card-panel blue lighten-5">
-            {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+  <section>
+    <h2>Your Posts</h2>
+    <ul>
+      {{#each posts as |post|}}
+      <li>
+        <div class="row">
+          <div class="col s12 m5">
+            <div class="card-panel blue lighten-5">
+              {{> post-info post}}
+              <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+            </div>
           </div>
         </div>
-      </div>
-    </li>
-    {{/each}}
-  </ul>
-</section>
-{{/if}}
+      </li>
+      {{/each}}
+    </ul>
+  </section>
+  {{/if}}
 
-<a href="#" id="create-new"> <h2>Create New Post</h2></a>
+  <a href="#" id="create-new">
+    <h2>Create New Post</h2>
+  </a>
 
-  <form class="new-post-form hide">
+  <form class="search-form">
+    <input type="text" class="search" placeholder="Business Name">
+    <ul class="suggestions">
+      <li>Filter for a business</li>
+    </ul>
+  </form>
+
+
+  <form class="new-post-form">
     <div>
-      {{!-- <form class="search-form">
-        <input type="text" class="search" placeholder="Business Name">
-        <ul class="suggestions">
-          <li>Filter for a business</li>
-        </ul>
-      </form> --}}
       <label for="business-name">Business Name(id)</label>
       <input type="number" id="business-name" placeholder="should be name is ID for NOW" />
       <label for="post-title">Title</label>
