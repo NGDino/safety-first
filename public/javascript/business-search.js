@@ -20,6 +20,7 @@ function displayMatches() {
   const html = matchArray.map(business => {
     const regex = new RegExp(this.value, 'gi');
     const businessName = business.name.replace(regex, `<span class="hl">${this.value}</span>`);
+    // const businessId = business.id.replace(regex, `<span class="hl">${this.value}</span>`);
     return `
       <li>
     <span class="name">${businessName}</span>
@@ -29,8 +30,8 @@ function displayMatches() {
   suggestions.innerHTML = html;
 }
 
-const searchInput = document.querySelector('.search');
-const suggestions = document.querySelector('.suggestions');
+const searchInput = document.querySelector('.search')
+if (searchInput) searchInput.addEventListener('change', displayMatches);
 
-// searchInput.addEventListener('change', displayMatches);
-// searchInput.addEventListener('keyup', displayMatches);
+const suggestions = document.querySelector('.suggestions')
+if (searchInput) searchInput.addEventListener('keyup', displayMatches);
