@@ -32,9 +32,9 @@ router.get('/:id', (req, res) => {
         });
 });
 
-// POST /api/users
+// POST /api/categories
 router.post('/', (req, res) => {
-    // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+    // expects {name: 'food'}
     Category.create({
         name: req.body.name
     })

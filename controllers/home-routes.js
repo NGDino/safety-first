@@ -15,8 +15,24 @@ router.get('/', (req, res) => {
                 model: Category,
                 attributes: ['name'],
             },
+            {
+                model: Post,
+                attributes:[
+                    'id',
+                    'title',
+                    'post_text',
+                    'mask_required',
+                    'staff_mask',
+                    'staff_gloves',
+                    'contactless_payment',
+                    'handsanitizer_provided',
+                    'social_distancing',
+                    'created_at'
+                ]
+        }
 
         ]
+    
     })
         .then(dbPostData => {
             // pass a single post object into the homepage template
@@ -75,7 +91,6 @@ router.get('/business/:id', (req, res) => {
                     'id',
                     'title',
                     'post_text',
-                    'safety_measures',
                     'mask_required',
                     'staff_mask',
                     'staff_gloves',

@@ -18,6 +18,17 @@ router.get('/', (req, res) => {
                 attributes: [
                     'name'
                 ]
+            },
+            {
+                model: Post,
+                attributes: [
+                    "mask_required",
+                    "staff_mask",
+                    "staff_gloves",
+                    "contactless_payment",
+                    "handsanitizer_provided",
+                    "social_distancing"
+                ]
             }
         ]
     })
@@ -46,7 +57,6 @@ router.get('/:id', (req, res) => {
                     [
                         'title',
                         'post_text',
-                        'safety_measures',
                         'mask_required',
                         'staff_mask',
                         'staff_gloves',

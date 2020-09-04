@@ -37,13 +37,7 @@ Post.init(
         key: 'id'
       }
     },
-    safety_measures: {
-      type: DataTypes.BOOLEAN,
-      // references: {
-      //   model: 'safety',
-      //   key: 'id'
-      // }
-    },
+    
     mask_required: {
       type: DataTypes.BOOLEAN,
     },
