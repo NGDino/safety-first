@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
             'id',
             'title',
             'post_text',
-            'safety_measures',
             'mask_required',
             'staff_mask',
             'staff_gloves',
@@ -37,7 +36,7 @@ router.get('/', (req, res) => {
         .then(dbPostData => {
             //         // pass a single post object into the homepage template
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            console.table(posts)
+            console.log(posts)
             res.render('dashboard', {
                 posts,
                 loggedIn: true
@@ -59,7 +58,6 @@ router.get('/edit/:id', (req, res) => {
                 'id',
                 'title',
                 'post_text',
-                'safety_measures',
                 'mask_required',
                 'staff_mask',
                 'staff_gloves',
