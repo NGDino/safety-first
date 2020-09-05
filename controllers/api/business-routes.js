@@ -68,6 +68,7 @@ router.get('/:id', (req, res) => {
         ]
     })
         .then(dbBusinessData => {
+            console.log("this is boolea data", dbBusinessData)
             if (!dbBusinessData) {
                 res.status(404).json({ message: 'No Business found with this id' });
                 return;

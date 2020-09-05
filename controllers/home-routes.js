@@ -27,7 +27,6 @@ router.get('/', (req, res) => {
                     'contactless_payment',
                     'handsanitizer_provided',
                     'social_distancing',
-                    'created_at'
                 ]
         }
 
@@ -36,7 +35,14 @@ router.get('/', (req, res) => {
     })
         .then(dbPostData => {
             // pass a single post object into the homepage template
+            
             const businesses = dbPostData.map(business => business.get({ plain: true }));
+            // console.log("businessssss", businesses)
+
+            businesses.map(singleBusiness=>{
+                console.log( 'get all of em',
+                    Object.values(singleBusiness))
+            })
 
             res.render('homepage', {
                 businesses,
@@ -107,6 +113,7 @@ router.get('/business/:id', (req, res) => {
         ]
     })
         .then(dbBusinessData => {
+            // console.log(dbBusinessData)
             if (!dbBusinessData) {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;
@@ -114,8 +121,8 @@ router.get('/business/:id', (req, res) => {
 
             // serialize the data
             const business = dbBusinessData.get({ plain: true });
-            
-
+            console.log('singlebiz business', business)
+                bizPosts = business.posts
             // pass data to template
             res.render('single-business', {
                 business,
@@ -124,7 +131,7 @@ router.get('/business/:id', (req, res) => {
             });
         })
         .catch(err => {
-            console.log(err);
+            console.log("error",err);
             res.status(500).json(err);
         });
 });
