@@ -15,11 +15,6 @@
       <input name="post-title" type="text" value="{{post.title}}" />
       <textarea name="post-text">{{post.post_text}}</textarea>
       <label>
-        <input type="checkbox" class="filled-in" id="safety-measures" {{#if post.safety_measures }}
-          checked="{{post.safety_measures}}" {{/if}}>
-        <span>Safety Measures</span>
-      </label>
-      <label>
         <input type="checkbox" class="filled-in" id="mask-required" {{#if post.mask_required}}
           checked="{{post.mask_required}}" {{/if}}>
         {{!-- <input type="checkbox" class="filled-in" id="mask-required" checked="{{post.mask_required}}" /> --}}

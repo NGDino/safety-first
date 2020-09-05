@@ -18,6 +18,17 @@ router.get('/', (req, res) => {
                 attributes: [
                     'name'
                 ]
+            },
+            {
+                model: Post,
+                attributes: [
+                    "mask_required",
+                    "staff_mask",
+                    "staff_gloves",
+                    "contactless_payment",
+                    "handsanitizer_provided",
+                    "social_distancing"
+                ]
             }
         ]
     })
@@ -46,7 +57,6 @@ router.get('/:id', (req, res) => {
                     [
                         'title',
                         'post_text',
-                        'safety_measures',
                         'mask_required',
                         'staff_mask',
                         'staff_gloves',
@@ -58,6 +68,7 @@ router.get('/:id', (req, res) => {
         ]
     })
         .then(dbBusinessData => {
+            console.log("this is boolea data", dbBusinessData)
             if (!dbBusinessData) {
                 res.status(404).json({ message: 'No Business found with this id' });
                 return;
