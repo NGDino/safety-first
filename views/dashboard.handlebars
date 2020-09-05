@@ -1,29 +1,39 @@
 {{!-- dashboard displays the create posts form and the previous created posts (if logged in) --}}
 <section>
-  {{!-- <h2>Create New Post</h2> --}}
-
+ 
   {{#if posts.length}}
   <section>
-    <h2>Your Posts</h2>
+    <div class="card-panel">
+      <div class="col s12 m5"></div>
+      <h4 class="blue-text z-depth-4 text-darken-2 center-align" >Your Posts</h4>
+    </div>
     <ul>
       {{#each posts as |post|}}
       <li>
         <div class="row">
-          <div class="col s12 m5">
+          <div class="col s12 m12">
             <div class="card-panel blue lighten-5">
               {{> post-info post}}
               <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
             </div>
           </div>
         </div>
+        
       </li>
       {{/each}}
     </ul>
+    
   </section>
   {{/if}}
 
   <a href="#" id="create-new">
-    <h2>Create New Post</h2>
+     <div class="card-panel">
+      <div class="col s12 m5"></div>
+      <span class="blue-text text-darken-2">Create New Post</span>
+      {{!-- <a class="waves-effect waves-light"><i class="material-icons left">cloud</i>Create New Post </a> --}}
+    
+    </div>
+    {{!-- <h2>Create New Post</h2> --}}
   </a>
 
   <form class="search-form">

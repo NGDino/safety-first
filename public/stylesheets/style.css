@@ -176,3 +176,25 @@
     padding: 1%;
     font-size: 110%;
   }
+
+  /* This is to change the footer to have a fixed posisiton */
+
+  /* body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1 0 auto;
+  }
+  
+  .page-footer{
+      position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: red;
+     color: white;
+     text-align: center; */
+  /* } */

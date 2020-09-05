@@ -12,47 +12,47 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <header>
-      <h5>
-        <a class="text-lighten-3" href="/"> Information Station</a>
-      </h5>
+    <div class="wrapper">
+      <header>
       <nav>
+        <a href="#" class="brand-logo  center">SAFR</a>
         {{#if loggedIn}}
         <a href="/dashboard">dashboard</a>
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
         <a href="/login">login</a>
         {{/if}}
-      </nav>
-    </header>
-    <main>
-      {{{ body }}}
-    </main>
-    <footer class="page-footer light-blue">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h6 class="orange-text">Information Station</h6>
-            <h6 class="grey-text text-lighten-4">Anywhere you want to go, let's blog!!
-            </h6>
-          </div>
-          <div class="col l3 s12">
-            <h6 class="white-text"> SafetyFirst COVID-19</h6>
-            
-          </div>
+       
+  </nav>
+  </header>
+  
+  <main>
+    {{{ body }}}
+  </main>
+  <footer class="page-footer light-blue ">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h4 class="orange-text">SafetyFirst</h4>
+          <h6 class="grey-text text-lighten-4 left-align">Anywhere you want togo, let's blog!!
+          </h6>
+        </div>
+        <div class="col l3 s12">
+          <h6 class="white-text"> Stay Safe during COVID-19</h6>
         </div>
       </div>
-      <div class="footer-copyright">
-          <div class="container">
-          © 2020 Copyright - Information Station <a class="orange-text text-lighten-3" href="copyright.html">Privacy Policy</a>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-          
-  </div>
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2020 Copyright - SafetyFirst <a class="orange-text text-lighten-3" href="copyright.html">Privacy Policy</a>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+      </div>
+      {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+      {{/if}}
+    </div>
 </body>
 
 </html>
