@@ -17,6 +17,7 @@ function findMatches(wordToMatch, businesses) {
 }
 
 function chooseBusiness(b_name, b_id) {
+  console.log("wth")
   console.log(b_name, b_id);
 
   let bn = document.querySelector('#business-name');
@@ -30,16 +31,15 @@ function displayMatches() {
     const regex = new RegExp(this.value, 'gi');
     const businessName = business.name.replace(regex, `<span class="hl">${this.value}</span>`);
     // const businessId = business.id.replace(regex, `<span class="hl">${this.value}</span>`);
-    let str = [business.name, business.id].join(',');
     return '<li><span class="name" onclick="chooseBusiness(\'' + business.name + '\', \'' + business.id + '\')">'+businessName+'</span></li>';
   }).join('');
   suggestions.innerHTML = html;
-  var smartSearch = document.querySelector(".name")
-  if (smartSearch) {
-    smartSearch.onclick = function () {
-      document.querySelector(".search").value = smartSearch.textContent
-    }
-  }
+  // var smartSearch = document.querySelector(".name")
+  // if (smartSearch) {
+  //   smartSearch.onclick = function () {
+  //     document.querySelector(".search").value = smartSearch.textContent
+  //   }
+  // }
 }
 
 const searchInput = document.querySelector('.search');
