@@ -15,17 +15,22 @@ function findMatches(wordToMatch, businesses) {
   });
 }
 
+function chooseBusiness(b_name, b_id) {
+  console.log(b_name, b_id);
+
+  let bn = document.querySelector('#business-name');
+  bn.value = b_name;
+  bn.dataset.business_id = b_id; 
+  console.log(bn);
+}
 function displayMatches() {
   const matchArray = findMatches(this.value, businesses);
   const html = matchArray.map(business => {
     const regex = new RegExp(this.value, 'gi');
     const businessName = business.name.replace(regex, `<span class="hl">${this.value}</span>`);
     // const businessId = business.id.replace(regex, `<span class="hl">${this.value}</span>`);
-    return `
-      <li>
-    <span class="name">${businessName}</span>
-  </li>
-    `;
+    let str = [business.name, business.id].join(',');
+    return '<li><span class="name" onclick="chooseBusiness(\'' + business.name + '\', \'' + business.id + '\')">'+businessName+'</span></li>';
   }).join('');
   suggestions.innerHTML = html;
 }

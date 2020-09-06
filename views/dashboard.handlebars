@@ -26,18 +26,21 @@
     <h2>Create New Post</h2>
   </a>
 
-  <form class="search-form">
+  {{!-- <form class="search-form">
     <input type="text" class="search" placeholder="Business Name">
     <ul class="suggestions">
       <li>Filter for a business</li>
     </ul>
-  </form>
+  </form> --}}
 
 
-  <form class="new-post-form hide">
+  <form class="new-post-form hide search-form">
     <div>
       <label for="business-name">Business Name(id)</label>
-      <input type="number" id="business-name" placeholder="should be name is ID for NOW" />
+      <input type="text" id="business-name" class="search" placeholder="Business Name">
+    <ul class="suggestions">
+      <li>Filter for a business</li>
+    </ul>
       <label for="post-title">Title</label>
       <input type="text" id="post-title" name="post-title" placeholder="Title" />
       <div class="safety-measures">
