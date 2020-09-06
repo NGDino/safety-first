@@ -1,7 +1,9 @@
 <ul class="business-list">
   <div class="row">
     <div class="col s12 m12">
-      <div class="card-panel blue lighten-5">
+      <div class="card-panel black-text yellow lighten-5 center-align ">
+        {{!-- <div class="card-panel"> --}}
+         {{!-- <div class="title black-text z-depth-2 text-darken-2 "> --}}
         {{#each businesses as |business| }}
         <li>
           {{> business-info business }}
@@ -9,7 +11,7 @@
         {{/each}}
       </div>
     </div>
-  </div>
+    </div>
   </ol>
 
   <ul class="business-list">
