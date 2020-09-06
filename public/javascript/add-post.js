@@ -26,7 +26,7 @@ async function newFormHandler(event) {
     business_id = id
     console.log('it includes this', business_id)
   }else{
-    business_id = document.querySelector('#business-name').value;
+    business_id = document.querySelector('#business-name').dataset.business_id;
   }
 
   // send them with a POST request to /api/posts
