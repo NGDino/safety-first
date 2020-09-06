@@ -1,5 +1,7 @@
 const endpoint = '/../../api/businesses';
 
+let html = '';
+
 const businesses = [];
 fetch(endpoint)
   .then(blob => blob.json())
@@ -7,11 +9,10 @@ fetch(endpoint)
 
 function findMatches(wordToMatch, businesses) {
   return businesses.filter(business => {
-    // here we need to figure out if the city or state matches what was searched
+    // does business match what was searched
     //gi - "global" "insensitive" look through entire array, match lower or upper case
     const regex = new RegExp(wordToMatch, 'gi');
     return business.name.match(regex)
-    //business.name.match??
   });
 }
 
@@ -20,18 +21,23 @@ function displayMatches() {
   const html = matchArray.map(business => {
     const regex = new RegExp(this.value, 'gi');
     const businessName = business.name.replace(regex, `<span class="hl">${this.value}</span>`);
-    // const businessId = business.id.replace(regex, `<span class="hl">${this.value}</span>`);
     return `
       <li>
-    <span class="name">${businessName}</span>
+    <span class="name" >${businessName}</span>
   </li>
     `;
   }).join('');
   suggestions.innerHTML = html;
+  var smartSearch = document.querySelector(".name")
+  if (smartSearch) {
+    smartSearch.onclick = function () {
+      document.querySelector(".search").value = smartSearch.textContent
+    }
+  }
 }
 
-const searchInput = document.querySelector('.search')
-if (searchInput) searchInput.addEventListener('change', displayMatches);
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
 
-const suggestions = document.querySelector('.suggestions')
-if (searchInput) searchInput.addEventListener('keyup', displayMatches);
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
