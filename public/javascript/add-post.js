@@ -20,7 +20,7 @@ async function newFormHandler(event) {
 
     const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1];
-
+   let busines_id; 
   if(url.includes('business')){
     
     business_id = id
@@ -29,6 +29,7 @@ async function newFormHandler(event) {
     business_id = document.querySelector('#business-name').dataset.business_id;
   }
 
+  console.log("bueis", document.querySelector('#business-name'))
   // send them with a POST request to /api/posts
   const response = await fetch(`/api/posts`, {
     method: 'POST',
