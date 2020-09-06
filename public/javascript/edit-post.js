@@ -6,7 +6,7 @@ async function editFormHandler(event) {
   ];
 
   const title = document.querySelector('input[name="post-title"]').value;
-  const business_id = document.querySelector('input[name="business-name"]').value;
+  const business_name = document.querySelector('#business-name').value;
   const text = document.querySelector('textarea[name="post-text"]').value;
   // const business_name = document.querySelector('#business-name').value;
   //test for safety measures
@@ -16,14 +16,14 @@ async function editFormHandler(event) {
   const contactless_payment = document.getElementById("contactless-payment").checked;//trying to give boolean value to checkbox
   const handsanitizer_provided = document.getElementById("handsanitizer-provided").checked;//trying to give boolean value to checkbox
   const social_distancing = document.getElementById("social-distancing").checked;//trying to give boolean value to checkbox
-  
+
 
   // send them with a POST request to /api/posts
   await fetch(`/api/posts/${id}`, {
     method: 'PUT',
     body: JSON.stringify({
       title,
-      business_id,
+      business_name,
       text,
       // business_name,
       mask_required,
