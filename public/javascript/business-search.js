@@ -28,32 +28,16 @@ function displayMatches() {
     `;
   }).join('');
   suggestions.innerHTML = html;
+  var smartSearch = document.querySelector(".name")
+  if (smartSearch) {
+    smartSearch.onclick = function () {
+      document.querySelector(".search").value = smartSearch.textContent
+    }
+  }
 }
 
-
-const searchSelect = document.querySelector('.name');
-
-
-function autoFill() {
-  const searchSelect = document.querySelector('.name').value;
-  document.querySelector('.search').value = searchSelect;
-  searchSelect.innerHTML = html
-}
-
-
-
-///
 const searchInput = document.querySelector('.search');
 const suggestions = document.querySelector('.suggestions');
 
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
-///
-
-if (searchSelect) searchSelect.addEventListener('click', autoFill);
-
-// const searchInput = document.querySelector('.search')
-// if (searchInput) searchInput.addEventListener('change', displayMatches);
-
-// const suggestions = document.querySelector('.suggestions')
-// if (searchInput) searchInput.addEventListener('keyup', displayMatches);

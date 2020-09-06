@@ -4,14 +4,14 @@
     Edit Post
   </h2>
   <form class="search-form">
-    <input type="text" class="search" placeholder="Business Name">
+    <input type="text" id="business-name" class="search" placeholder="Business Name">
     <ul class="suggestions">
       <li>Filter for a business</li>
     </ul>
   </form>
   <form class="edit-post-form">
     <div>
-      <input name="business-name" type="text" id="business-name" value="{{post.business.name}}" />
+      <input name="business-id" type="text" value="{{post.business.name}}" />
       <input name="post-title" type="text" value="{{post.title}}" />
       <textarea name="post-text">{{post.post_text}}</textarea>
       <label>
@@ -22,38 +22,31 @@
       <label>
         <input type="checkbox" class="filled-in" id="mask-required" {{#if post.mask_required}}
           checked="{{post.mask_required}}" {{/if}}>
-        {{!-- <input type="checkbox" class="filled-in" id="mask-required" checked="{{post.mask_required}}" /> --}}
         <span>Masks required</span>
       </label>
       <label>
         <input type="checkbox" class="filled-in" id="staff-mask" {{#if post.staff_mask}} checked="{{post.staff_mask}}"
           {{/if}}>
-        {{!-- <input type="checkbox" class="filled-in" id="staff-mask" checked="{{post.staff_mask}}" /> --}}
         <span>Staff wears masks</span>
       </label>
       <label>
         <input type="checkbox" class="filled-in" id="staff-gloves" {{#if post.staff_gloves}}
           checked="{{post.staff_gloves}}" {{/if}}>
-        {{!-- <input type="checkbox" class="filled-in" id="staff-gloves" checked="{{post.staff_gloves}}" /> --}}
         <span>Staff wears gloves</span>
       </label>
       <label>
         <input type="checkbox" class="filled-in" id="contactless-payment" {{#if post.contactless_payment}}
           checked="{{post.contactless_payment}}" {{/if}}>
-        {{!-- <input type="checkbox" class="filled-in" id="contactless-payment" checked="{{post.contactless_payment}}" /> --}}
         <span>Contactless payment</span>
       </label>
       <label>
         <input type="checkbox" class="filled-in" id="handsanitizer-provided" {{#if post.handsanitizer_provided}}
           checked="{{post.handsanitizer_provided}}" {{/if}}>
-        {{!-- <input type="checkbox" class="filled-in" id="handsanitizer-provided" --}}
-        {{!-- checked="{{post.handsanitizer_provided}}" /> --}}
         <span>Handsanitizer provided</span>
       </label>
       <label>
         <input type="checkbox" class="filled-in" id="social-distancing" {{#if post.social_distancing}}
           checked="{{post.social_distancing}}" {{/if}}>
-        {{!-- <input type="checkbox" class="filled-in" id="social-distancing" checked="{{post.social_distancing}}" /> --}}
         <span>Social distancing enforced</span>
       </label>
     </div>

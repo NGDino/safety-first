@@ -6,7 +6,7 @@ async function editFormHandler(event) {
   ];
 
   const title = document.querySelector('input[name="post-title"]').value;
-  const business_id = document.querySelector('input[name="business-name"]').value;
+  const business_name = document.querySelector('#business-name').value;
   const text = document.querySelector('textarea[name="post-text"]').value;
   // const business_name = document.querySelector('#business-name').value;
   //test for safety measures
@@ -24,9 +24,8 @@ async function editFormHandler(event) {
     method: 'PUT',
     body: JSON.stringify({
       title,
-      business_id,
+      business_name,
       text,
-      // business_name,
       safety_measures,
       mask_required,
       staff_mask,
