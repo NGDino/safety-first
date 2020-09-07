@@ -75,6 +75,12 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+// router.get('/add-business', (req, res) => {
+   
+
+//     res.render('add-business');
+// });
+
 //open single business
 router.get('/business/:id', (req, res) => {
     Business.findOne({
