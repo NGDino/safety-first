@@ -22,7 +22,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 const sess = {
-  secret: process.env.SECRET,
+  secret: 'fkljaklfh8587687834flkfjlj587578',
   cookie: {},
   resave: false,
   saveUninitialized: true,
