@@ -23,7 +23,7 @@ async function editFormHandler(event) {
     method: 'PUT',
     body: JSON.stringify({
       title,
-      business_name,
+      business_id,
       text,
       // business_name,
       mask_required,
