@@ -1,5 +1,21 @@
 {{!-- pulled out of homepage --}}
-<article class="business">
+
+
+  <div class="col s12 m12 business business-list">
+    <div class="card horizontal title black-text yellow lighten-5 center-align">
+      <div class="card-stacked">
+        <h2 class="header"><a href="/business/{{id}}">{{name}}</a></h2>
+        <div class="card-content">
+           <h5> Category: {{category.name}} </h5>
+           <p class="reviews"> Number of reviews: {{posts.length}}</p>
+        </div>
+        <div class="card-action">
+           <a href="http://{{business_url}}" target="_blank">{{business_url}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{{!-- <article class="business">
   <div class="title">
 
     <h1><a href="/business/{{id}}">{{name}}</a></h1>
@@ -9,4 +25,4 @@
 
   </div>
 
-</article>
+</article> --}}

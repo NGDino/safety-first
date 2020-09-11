@@ -1,5 +1,20 @@
-{{> business-info business }}
-<div id="rateYo"></div>
+  <div class="col s12 m7 business">
+    <div class="card horizontal title black-text yellow lighten-5 center-align">
+      <div class="card-stacked">
+        <h2 class="header">{{business.name}}</h2>
+        <div class="card-content">
+           <h5> Category: {{business.category.name}} </h5>
+           <h6>Average Safety Score: </h6>
+           <div id="rateYo"></div>
+           <p class="reviews"> Number of reviews: {{business.posts.length}}</p>
+        </div>
+        <div class="card-action">
+           <a href="{{business.business_url}}" target="_blank">{{business_url}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 <a href="" <section>
   <h2>{{business.name}} Reviews</h2>

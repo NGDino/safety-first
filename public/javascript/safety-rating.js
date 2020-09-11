@@ -65,7 +65,8 @@ $(function () {
  
   $("#rateYo").rateYo({
     rating: `${rating}%`,
-    precision: 0
+    precision: 0,
+    readOnly: true
   });
  
 });
